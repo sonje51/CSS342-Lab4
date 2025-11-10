@@ -1,5 +1,5 @@
-#ifndef FILENAME_H
-#define FILENAME_H
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
 
 class LinkedList 
 {
@@ -26,9 +26,12 @@ class LinkedList
         // TODO: =
 
     private:
+        struct Node {
+            ItemType *data;
+            Node *next;
+        };
         
     // Friend methods
     friend ostream& operator <<(ostream &outStream, const LinkedList &ll);
 };
-
 #endif

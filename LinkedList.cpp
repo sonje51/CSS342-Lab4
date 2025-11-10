@@ -8,39 +8,59 @@ LinkedList::LinkedList()
 
 LinkedList::~LinkedList() {}
 
-bool BuildList(string fileName)
+bool LinkedList::BuildList(string fileName)
 {
     // TODO: Write method
 }
 
-bool Insert(ItemType *obj)
+bool LinkedList::Insert(ItemType *obj)
 {
     // TODO: Write method
 }
 
-bool Remove(ItemType target, ItemType &result)
+bool LinkedList::Remove(ItemType target, ItemType &result)
 {
     // TODO: Write method
 }
 
-bool Peek(ItemType target, ItemType &result) const
+bool LinkedList::Peek(ItemType target, ItemType &result) const
 {
     // TODO: Write method
 }
 
-bool isEmpty() const
+bool LinkedList::isEmpty() const
 {
     // TODO: Write method
 }
 
-void DeleteList()
+void LinkedList::DeleteList()
 {
     // TODO: Write method
 }
 
-bool Merge(LinkedList &list1)
+bool LinkedList::Merge(LinkedList &list1)
 {
     // TODO: Write method
 }
 
-// TODO: Overload operators
+LinkedList::LinkedList& operator+=(const LinkedList &ll)
+{
+    // TODO: Write method
+}
+
+LinkedList::LinkedList operator+(const LinkedList &ll) const
+{
+    // TODO: Write method
+}
+
+bool LinkedList::operator==(const LinkedList &ll) const
+{
+    // TODO: Write method
+}
+
+bool LinkedList::operator!=(const LinkedList &ll) const
+{
+    // TODO: Write method
+}
+
+// TODO: Overload = operator
