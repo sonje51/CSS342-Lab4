@@ -1,5 +1,5 @@
 #ifndef CHILD_H
-#define CHLID_H
+#define CHILD_H
 
 class Child 
 {
