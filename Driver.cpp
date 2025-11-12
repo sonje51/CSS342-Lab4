@@ -1,8 +1,13 @@
 #include <iostream>
 #include "LinkedList.h"
+// g++ -std=c++14 Child.cpp LinkedList.cpp Driver.cpp
+// ./a.out
 
 int main()
 {
+    LinkedList<int> ll1;
+
+    /*
     // Create multiple Child
     Child c1("Angie", "Ham", 7),      c2("Pradnya", "Dhala", 8),
           c3("Bill", "Vollmann", 13), c4("Cesar", "Ruiz", 6);
@@ -90,6 +95,7 @@ int main()
     numbers.Insert(&c);
     cout << "These are the numbers: " << numbers << endl;
     numbers.DeleteList();
+    */
     return 0;
 }
 
