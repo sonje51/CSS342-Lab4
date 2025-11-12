@@ -44,13 +44,16 @@ bool LinkedList::Peek(ItemType target, ItemType &result) const
     // TODO: Write method
     return false;
 }
+    */
 
-bool LinkedList::isEmpty() const
+template<class ItemType>
+bool LinkedList<ItemType>::isEmpty() const
 {
-    // TODO: Write method
+    if(this->head==nullptr) return true;
     return false;
 }
 
+/*
 void LinkedList::DeleteList()
 {
     // TODO: Write method

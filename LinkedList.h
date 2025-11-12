@@ -14,12 +14,12 @@ class LinkedList
         // Setters/Getters
 
         // Actions
-        /*
-        bool BuildList(string fileName);
-        bool Insert(ItemType *obj);
-        bool Remove(ItemType target, ItemType &result);
-        bool Peek(ItemType target, ItemType &result) const;
+        // bool BuildList(string fileName);
+        // bool Insert(ItemType *obj);
+        // bool Remove(ItemType target, ItemType &result);
+        // bool Peek(ItemType target, ItemType &result) const;
         bool isEmpty() const;
+        /*
         void DeleteList();
         bool Merge(LinkedList &list1);
         */

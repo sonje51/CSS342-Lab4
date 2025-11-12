@@ -1,12 +1,14 @@
 #include <iostream>
 #include "LinkedList.h"
+
+using namespace std;
 // g++ -std=c++14 Child.cpp LinkedList.cpp Driver.cpp
 // ./a.out
 
 int main()
 {
     LinkedList<int> ll1;
-
+    cout << "ll1.isEmpty = " << ll1.isEmpty() << endl;
     /*
     // Create multiple Child
     Child c1("Angie", "Ham", 7),      c2("Pradnya", "Dhala", 8),
