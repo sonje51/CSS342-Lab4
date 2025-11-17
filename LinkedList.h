@@ -11,14 +11,15 @@ class LinkedList
         LinkedList(); // default constructor
         LinkedList(LinkedList<ItemType> &); // copy constructor
         // ~LinkedList();
-        // Setters/Getters
 
-        // Actions
+        // Setters/Getters
         // bool BuildList(string fileName);
         // bool Insert(ItemType *obj);
+        bool isEmpty() const;
+
+        // Actions
         // bool Remove(ItemType target, ItemType &result);
         // bool Peek(ItemType target, ItemType &result) const;
-        bool isEmpty() const;
         /*
         void DeleteList();
         bool Merge(LinkedList &list1);

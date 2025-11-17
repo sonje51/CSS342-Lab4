@@ -31,8 +31,19 @@ bool LinkedList::Insert(ItemType *obj)
 {
     // TODO: Write method
     return false;
+
+    // obj is a new node that we need to place into the List
+}
+*/
+
+template<class ItemType>
+bool LinkedList<ItemType>::isEmpty() const
+{
+    if(this->head==nullptr) return true;
+    return false;
 }
 
+/*
 bool LinkedList::Remove(ItemType target, ItemType &result)
 {
     // TODO: Write method
@@ -46,12 +57,6 @@ bool LinkedList::Peek(ItemType target, ItemType &result) const
 }
     */
 
-template<class ItemType>
-bool LinkedList<ItemType>::isEmpty() const
-{
-    if(this->head==nullptr) return true;
-    return false;
-}
 
 /*
 void LinkedList::DeleteList()
