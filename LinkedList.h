@@ -10,7 +10,7 @@ class LinkedList
         // Constructors
         LinkedList(); // default constructor
         LinkedList(LinkedList<ItemType> &); // copy constructor
-        // ~LinkedList();
+        ~LinkedList();
 
         // Setters/Getters
         // bool BuildList(string fileName);
@@ -20,18 +20,15 @@ class LinkedList
         // Actions
         // bool Remove(ItemType target, ItemType &result);
         // bool Peek(ItemType target, ItemType &result) const;
-        /*
         void DeleteList();
-        bool Merge(LinkedList &list1);
-        */
+        // bool Merge(LinkedList &list1);
 
         // Operator Overloads
-        /*
-        LinkedList& operator+=(const LinkedList &ll);
-        LinkedList operator+(const LinkedList &ll) const;
-        bool operator==(const LinkedList &ll) const;
-        bool operator!=(const LinkedList &ll) const;
-        */
+        // LinkedList& operator+=(const LinkedList &ll);
+        // LinkedList operator+(const LinkedList &ll) const;
+        // bool operator==(const LinkedList &ll) const;
+        // bool operator!=(const LinkedList &ll) const;
+
         // TODO: =
 
     private:

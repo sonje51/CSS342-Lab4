@@ -9,6 +9,7 @@ int main()
 {
     LinkedList<int> ll1;
     cout << "ll1.isEmpty = " << ll1.isEmpty() << endl;
+    ll1.DeleteList();
     /*
     // Create multiple Child
     Child c1("Angie", "Ham", 7),      c2("Pradnya", "Dhala", 8),
