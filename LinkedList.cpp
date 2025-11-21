@@ -74,30 +74,51 @@ LinkedList<ItemType>::~LinkedList()
 template<class ItemType>
 bool LinkedList<ItemType>::Insert(ItemType *obj)
 {
-    Node *temp = this->head;
+    Node* temp = this->head;
     Node* newNode = new Node;
     newNode->data = obj;
 
+    // If list is empty, add node and return true
     if(this->head == nullptr)
     {
         this->head = newNode;
         return true;
     }
 
-    while(temp->next != nullptr)
+    // iterate through list to find where node gets placed
+    Node* prevNode = nullptr;
+    while(temp != nullptr)
     {
-        if(temp->data == obj.data())
+        // Check if same node already exists
+        if(*(newNode->data) == *(temp->data))
         {
+            delete newNode;
             return false; // value being added already exists
         }
-        temp = temp->next;
-    } // Now temp is at the last value
 
-    temp->next = newNode;
+        // If newNode is less than temp, add it in before temp
+        if(*(newNode->data) < *(temp->data))
+        {
+            newNode->next = temp;
+            if(temp == this->head) // If at the beginning
+            {
+                this->head = newNode;
+            }
+            else
+            {
+                prevNode->next = newNode;
+            }
+            return true; // Node has been placed
+        }
+
+        // Keep moving through the list
+        prevNode = temp;
+        temp = temp->next;
+    } // Now temp is nullptr at end of list
+
+    // Insert newNode at the end since it must be greater than all other nodes
+    prevNode->next = newNode; 
     return true;
-    // TODO: Write method so it checks for duplicates and places it in the correct order
-    // TODO: return false if it is a duplicate
-    // obj is a new node that we need to place into the List
 }
 
 template<class ItemType>
