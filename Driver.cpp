@@ -9,6 +9,34 @@ int main()
 {
     LinkedList<int> ll1;
     cout << "ll1.isEmpty = " << ll1.isEmpty() << endl;
+    int a = 1, b = -1, c = 13, a1 = 1; 
+    ll1.Insert(&a);
+    cout << "ll1.isEmpty = " << ll1.isEmpty() << endl;
+    ll1.Insert(&b);
+    cout << "ll1.isEmpty = " << ll1.isEmpty() << endl;
+    
+    LinkedList<int> ll2;
+    ll2.Insert(&a1);
+    ll2.Insert(&b);
+    if(ll1 == ll2)
+    {
+        cout << "ll1 and ll2 are equal." << endl;
+    }
+    else
+    {
+        cout << "ll1 and ll2 are not equal." << endl;
+    }
+    
+    ll2.Insert(&c);
+    if(ll1 == ll2)
+    {
+        cout << "ll1 and ll2 are equal." << endl;
+    }
+    else
+    {
+        cout << "ll1 and ll2 are not equal." << endl;
+    }
+
     ll1.DeleteList();
     /*
     // Create multiple Child

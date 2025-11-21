@@ -14,11 +14,11 @@ class LinkedList
 
         // Setters/Getters
         // bool BuildList(string fileName);
-        // bool Insert(ItemType *obj);
+        bool Insert(ItemType *obj);
         bool isEmpty() const;
 
         // Actions
-        // bool Remove(ItemType target, ItemType &result);
+        bool Remove(ItemType target, ItemType &result);
         // bool Peek(ItemType target, ItemType &result) const;
         void DeleteList();
         // bool Merge(LinkedList &list1);
@@ -26,8 +26,8 @@ class LinkedList
         // Operator Overloads
         // LinkedList& operator+=(const LinkedList &ll);
         // LinkedList operator+(const LinkedList &ll) const;
-        // bool operator==(const LinkedList &ll) const;
-        // bool operator!=(const LinkedList &ll) const;
+        bool operator==(const LinkedList &ll) const;
+        bool operator!=(const LinkedList &ll) const;
 
         // TODO: =
 

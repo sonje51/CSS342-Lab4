@@ -70,15 +70,31 @@ LinkedList<ItemType>::~LinkedList()
     read into.
     */
 
-/*
-bool LinkedList::Insert(ItemType *obj)
-{
-    // TODO: Write method
-    return false;
 
+template<class ItemType>
+bool LinkedList<ItemType>::Insert(ItemType *obj)
+{
+    Node *temp = this->head;
+    Node* newNode = new Node;
+    newNode->data = obj;
+
+    if(this->head == nullptr)
+    {
+        this->head = newNode;
+        return true;
+    }
+
+    while(temp->next != nullptr)
+    {
+        temp = temp->next;
+    } // Now temp is at the last value
+
+    temp->next = newNode;
+    return true;
+    // TODO: Write method so it checks for duplicates and places it in the correct order
+    // TODO: return false if it is a duplicate
     // obj is a new node that we need to place into the List
 }
-*/
 
 template<class ItemType>
 bool LinkedList<ItemType>::isEmpty() const
@@ -87,13 +103,21 @@ bool LinkedList<ItemType>::isEmpty() const
     return false;
 }
 
-/*
-bool LinkedList::Remove(ItemType target, ItemType &result)
+template<class ItemType>
+bool LinkedList<ItemType>::Remove(ItemType target, ItemType &result)
 {
     // TODO: Write method
+    /*
+    Assume ordered list
+    1. Search for target
+        This can be done by binary search since the list is ordered
+    2. If found, remove it from the list
+    3. Return true if found and removed, false otherwise
+    */
     return false;
 }
 
+/*
 bool LinkedList::Peek(ItemType target, ItemType &result) const
 {
     // TODO: Write method
@@ -133,17 +157,43 @@ LinkedList::LinkedList operator+(const LinkedList &ll) const
 {
     // TODO: Write method
 }
-
-bool LinkedList::operator==(const LinkedList &ll) const
-{
-    // TODO: Write method
-}
-
-bool LinkedList::operator!=(const LinkedList &ll) const
-{
-    // TODO: Write method
-}
 */
+
+// Compares two linked lists for equality.
+// Returns true if both lists contain the same elements in the same order, false otherwise.
+template<class ItemType>
+bool LinkedList<ItemType>::operator==(const LinkedList &ll) const
+{
+    Node *curr1 = this->head;
+    Node *curr2 = ll.head;
+    while((curr1 != nullptr) && (curr2 != nullptr))
+    {
+        // When comparing the data, look at thier value, not address
+        if(*(curr1->data) != *(curr2->data))
+        {
+            return false;
+        }
+        else
+        {
+            curr1 = curr1->next;
+            curr2 = curr2->next;
+        }
+    }
+    // If one is a nullptr, and the other is not, they are not equal
+    if((curr1 != nullptr) ^ (curr2 != nullptr))
+    {
+        return false;
+    }
+
+    return true;
+}
+
+template<class ItemType>
+bool LinkedList<ItemType>::operator!=(const LinkedList &ll) const
+{
+    return !(*this == ll);
+}
+
 // TODO: Overload = operator
 
 #endif
