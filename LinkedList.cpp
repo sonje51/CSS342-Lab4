@@ -86,6 +86,10 @@ bool LinkedList<ItemType>::Insert(ItemType *obj)
 
     while(temp->next != nullptr)
     {
+        if(temp->data == obj.data())
+        {
+            return false; // value being added already exists
+        }
         temp = temp->next;
     } // Now temp is at the last value
 
