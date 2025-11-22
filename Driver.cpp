@@ -36,7 +36,6 @@ int main()
     {
         cout << "ll1 and ll2 are not equal." << endl;
     }
-
     ll1.DeleteList();
 
     // Read from file
@@ -112,6 +111,35 @@ int main()
     cout << "Looking for 95. Peek: " << z << endl;
     ll3.Peek(1, z);
     cout << "Looking for  1. Peek: " << z << endl;
+
+    // Merging lists
+    ll3.Merge(ll1);
+    cout << "ll3 contents: ";
+    temp = ll3.head;
+    while(temp != nullptr)
+    {
+        cout << *(temp->data) << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+    ll1.Merge(ll3);
+    cout << "ll1 contents: ";
+    temp = ll1.head;
+    while(temp != nullptr)
+    {
+        cout << *(temp->data) << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+    ll3.Merge(ll2);
+    cout << "ll3 contents: ";
+    temp = ll3.head;
+    while(temp != nullptr)
+    {
+        cout << *(temp->data) << " ";
+        temp = temp->next;
+    }
+    cout << endl;
 
     /*
     // Create multiple Child
