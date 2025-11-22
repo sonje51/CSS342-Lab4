@@ -126,24 +126,34 @@ bool LinkedList<ItemType>::isEmpty() const
 template<class ItemType>
 bool LinkedList<ItemType>::Remove(ItemType target, ItemType &result)
 {
-    // TODO: Write method
-    /*
-    Assume ordered list
-    1. Search for target
-        This can be done by binary search since the list is ordered
-    2. If found, remove it from the list
-    3. Return true if found and removed, false otherwise
-    */
+    Node* temp = this->head;
+    Node* prevNode = nullptr;
+    while(temp != nullptr)
+    {
+        if(*(temp->data) == target) // check if target matches node
+        {
+            if(prevNode == nullptr) // If target is the first node
+            {
+                this->head = temp->next;
+            }
+            else
+            {
+                prevNode->next = temp->next;
+            }
+            delete temp;
+            return true;
+        }
+        prevNode = temp;
+        temp = temp->next;
+    }
     return false;
 }
 
-/*
 bool LinkedList::Peek(ItemType target, ItemType &result) const
 {
     // TODO: Write method
     return false;
 }
-    */
 
 // Deletes all nodes in the linked list and frees memory.
 // After calling this method, the list will be empty.

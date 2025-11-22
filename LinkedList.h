@@ -19,7 +19,7 @@ class LinkedList
 
         // Actions
         bool Remove(ItemType target, ItemType &result);
-        // bool Peek(ItemType target, ItemType &result) const;
+        bool Peek(ItemType target, ItemType &result) const;
         void DeleteList();
         // bool Merge(LinkedList &list1);
 

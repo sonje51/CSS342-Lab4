@@ -9,7 +9,7 @@ int main()
 {
     LinkedList<int> ll1;
     cout << "ll1.isEmpty = " << ll1.isEmpty() << endl;
-    int a = 1, b = -1, c = 13, a1 = 1; 
+    int a = 1, b = -1, c = 13, a1 = 1, z; 
     ll1.Insert(&a);
     cout << "ll1.isEmpty = " << ll1.isEmpty() << endl;
     ll1.Insert(&b);
@@ -46,6 +46,44 @@ int main()
     // print out ll3
     cout << "ll3 contents: ";
     LinkedList<int>::Node* temp = ll3.head;
+    while(temp != nullptr)
+    {
+        cout << *(temp->data) << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+
+    // Remove nodes
+    ll3.Remove(12, z);
+    cout << "ll3 contents: ";
+    temp = ll3.head;
+    while(temp != nullptr)
+    {
+        cout << *(temp->data) << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+    ll3.Remove(13, z);
+    cout << "ll3 contents: ";
+    temp = ll3.head;
+    while(temp != nullptr)
+    {
+        cout << *(temp->data) << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+    ll3.Remove(95, z);
+    cout << "ll3 contents: ";
+    temp = ll3.head;
+    while(temp != nullptr)
+    {
+        cout << *(temp->data) << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+    ll3.Remove(1, z);
+    cout << "ll3 contents: ";
+    temp = ll3.head;
     while(temp != nullptr)
     {
         cout << *(temp->data) << " ";
