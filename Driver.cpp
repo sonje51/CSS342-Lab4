@@ -92,7 +92,26 @@ int main()
         temp = temp->next;
     }
     cout << endl;
-    cout << "Removed: " << z << endl;
+    cout << "Removed: " << z << endl << endl;
+
+    // Peek nodes
+    ll3.BuildList("numbers.txt");
+    cout << "ll3 contents: ";
+    temp = ll3.head;
+    while(temp != nullptr)
+    {
+        cout << *(temp->data) << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+    ll3.Peek(12, z);
+    cout << "Looking for 12. Peek: " << z << endl;
+    ll3.Peek(13, z);
+    cout << "Looking for 13. Peek: " << z << endl;
+    ll3.Peek(95, z);
+    cout << "Looking for 95. Peek: " << z << endl;
+    ll3.Peek(1, z);
+    cout << "Looking for  1. Peek: " << z << endl;
 
     /*
     // Create multiple Child

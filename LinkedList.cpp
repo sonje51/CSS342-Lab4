@@ -153,7 +153,18 @@ bool LinkedList<ItemType>::Remove(ItemType target, ItemType &result)
 template<class ItemType>
 bool LinkedList<ItemType>::Peek(ItemType target, ItemType &result) const
 {
-    // TODO: Write method
+    Node* temp = this->head;
+    Node* prevNode = nullptr;
+    while(temp != nullptr)
+    {
+        if(*(temp->data) == target) // check if target matches node
+        {
+            result = *(temp->data);
+            return true;
+        }
+        prevNode = temp;
+        temp = temp->next;
+    }
     return false;
 }
 
