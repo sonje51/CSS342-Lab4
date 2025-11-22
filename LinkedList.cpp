@@ -132,6 +132,7 @@ bool LinkedList<ItemType>::Remove(ItemType target, ItemType &result)
     {
         if(*(temp->data) == target) // check if target matches node
         {
+            result = *(temp->data);
             if(prevNode == nullptr) // If target is the first node
             {
                 this->head = temp->next;
@@ -149,7 +150,8 @@ bool LinkedList<ItemType>::Remove(ItemType target, ItemType &result)
     return false;
 }
 
-bool LinkedList::Peek(ItemType target, ItemType &result) const
+template<class ItemType>
+bool LinkedList<ItemType>::Peek(ItemType target, ItemType &result) const
 {
     // TODO: Write method
     return false;

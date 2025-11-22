@@ -63,6 +63,7 @@ int main()
         temp = temp->next;
     }
     cout << endl;
+    cout << "Removed: " << z << endl;
     ll3.Remove(13, z);
     cout << "ll3 contents: ";
     temp = ll3.head;
@@ -81,6 +82,7 @@ int main()
         temp = temp->next;
     }
     cout << endl;
+    cout << "Removed: " << z << endl;
     ll3.Remove(1, z);
     cout << "ll3 contents: ";
     temp = ll3.head;
@@ -90,6 +92,7 @@ int main()
         temp = temp->next;
     }
     cout << endl;
+    cout << "Removed: " << z << endl;
 
     /*
     // Create multiple Child
