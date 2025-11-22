@@ -21,7 +21,7 @@ class LinkedList
         bool Remove(ItemType target, ItemType &result);
         bool Peek(ItemType target, ItemType &result) const;
         void DeleteList();
-        // bool Merge(LinkedList &list1);
+        bool Merge(LinkedList &list1);
 
         // Operator Overloads
         // LinkedList& operator+=(const LinkedList &ll);

@@ -184,13 +184,62 @@ void LinkedList<ItemType>::DeleteList()
     // std::cout << "LinkedList deleted" << std::endl;
 }
 
-/*
-bool LinkedList::Merge(LinkedList &list1)
+template<class ItemType>
+bool LinkedList<ItemType>::Merge(LinkedList &list1)
 {
+    if(list1->head == nullptr)
+    {
+        return true; // Exit early if the added list is empty
+    }
+
+    // If this list has nothing, and assume list1 has something
+    // Shift the LinkedList over to this from list1
+    if(this->head == nullptr)
+    {
+        this->head = list1->head;
+        list1->head = nullptr; 
+    }
+
+    // Iterate through both lists
+    Node* tempThis = this->head;
+    Node* prevThis = nullptr;
+    Node* tempList1 = list1->head;
+
+    while(tempList1 != nullptr)
+    {
+        while((tempThis->data) == (tempList1->data))
+        {
+            // While same, do nothing
+        }
+        while((tempThis->data) > (tempList1->data))
+        {
+            // while this is greater, use prev to add in the list1 node
+            
+        }
+        while((tempThis->data) < (tempList1->data))
+        {
+            // While list1 is greater, keep moving
+        }
+    }
+
+    /*
+    Both lists must be ordered
+    1. Iterate through both lists 
+        1a. Move forward with list when l1.data is greater 
+        1b. While l1.data is smaller, use list's prevNode.next to set equal to l1 node
+            Set prevNode to this newly added node
+    */
+    /*
+    if both are same, exit?
+    1. Iterate through the extra list one by one
+    2. As you encounter each node, Insert() it into list
+        2a. This means move each node over to the OG list
+    3. exit
+    */
     // TODO: Write method
     return false;
 }
-
+/*
 LinkedList::LinkedList& operator+=(const LinkedList &ll)
 {
     // TODO: Write method
