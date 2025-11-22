@@ -34,42 +34,26 @@ LinkedList<ItemType>::~LinkedList()
 //  * @param fileName The name of the file to read from.
 //  * @return true if the file was successfully opened and the list was built, false otherwise.
 //  */
-// template<class ItemType>
-// bool LinkedList<ItemType>::BuildList(const std::string& fileName)
-// {
+template<class ItemType>
+bool LinkedList<ItemType>::BuildList(std::string fileName)
+{
+    std::ifstream myFile(fileName);
 
-// }
-// {
-//     std::ifstream myFile(fileName);
-//     if (myFile.is_open()) 
-//     {
-//         ItemType token;
-//         while (myFile >> token)
-//         {
-//             Node* newNode = new Node;
-//             newNode->data = token;
-//             newNode->next = head;
-//             head = newNode;
-//         }
-//         myFile.close();
-//         return true;
-//     }
-//     else
-//     {
-//         std::cout << "Unable to open file";
-//         return false;
-//     }
-// }
-
-    /*
-    Given a string which represents a file, open the file, read the objects from file, and build 
-    an ordered list. Note that BuildList puts the responsibility on the Object class to know how 
-    to read from a file. That is, do not have object specific logic in the implementation. You can 
-    insert each item into the list as you read it from the file. If a list already has items, add 
-    the new items to the list. Assume that the list passed in is well-formed for the object being 
-    read into.
-    */
-
+    if(myFile.is_open())
+    {
+        ItemType obj;
+        while(myFile >> obj)
+        {
+            this->Insert(new ItemType(obj));
+        }
+        return true;
+    }
+    else
+    {
+        std::cout << "Unable to open file" << std::endl;
+        return false;
+    }
+}
 
 template<class ItemType>
 bool LinkedList<ItemType>::Insert(ItemType *obj)

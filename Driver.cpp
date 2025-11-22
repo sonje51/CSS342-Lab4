@@ -38,6 +38,21 @@ int main()
     }
 
     ll1.DeleteList();
+
+    // Read from file
+    LinkedList<int> ll3;
+    ll3.BuildList("numbers.txt");
+    cout << "ll3.isEmpty = " << ll3.isEmpty() << endl;
+    // print out ll3
+    cout << "ll3 contents: ";
+    LinkedList<int>::Node* temp = ll3.head;
+    while(temp != nullptr)
+    {
+        cout << *(temp->data) << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+
     /*
     // Create multiple Child
     Child c1("Angie", "Ham", 7),      c2("Pradnya", "Dhala", 8),

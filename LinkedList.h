@@ -13,7 +13,7 @@ class LinkedList
         ~LinkedList();
 
         // Setters/Getters
-        // bool BuildList(string fileName);
+        bool BuildList(std::string fileName);
         bool Insert(ItemType *obj);
         bool isEmpty() const;
 
@@ -31,7 +31,7 @@ class LinkedList
 
         // TODO: =
 
-    private:
+    //private:
         struct Node 
         {
             ItemType *data = nullptr;
@@ -40,7 +40,7 @@ class LinkedList
         Node* head;
         
     // Friend methods
-    //friend ostream& operator <<(ostream &outStream, const LinkedList &ll);
+    // friend ostream& operator <<(ostream &outStream, const LinkedList &ll);
 };
 #include "LinkedList.cpp"
 #endif
