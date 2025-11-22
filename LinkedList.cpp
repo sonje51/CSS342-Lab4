@@ -187,13 +187,14 @@ void LinkedList<ItemType>::DeleteList()
 template<class ItemType>
 bool LinkedList<ItemType>::Merge(LinkedList &list1)
 {
-    if(list1.head == nullptr)
+    // If both lists are the same OR If list1 is empty
+    if(*this == list1 || list1.head == nullptr)
     {
-        return true; // Exit early if the added list is empty
+        return true;
     }
 
-    // If this list has nothing, and assume list1 has something
-    // Shift the LinkedList over to this from list1
+    // If 'this' list has nothing, and assume 'list1' has something
+    // Shift the LinkedList over to this from 'list1'
     if(this->head == nullptr)
     {
         this->head = list1.head;
@@ -207,14 +208,14 @@ bool LinkedList<ItemType>::Merge(LinkedList &list1)
 
     while(tempList1 != nullptr)
     {
-        while((tempThis->data) == (tempList1->data))
+        while(*(tempThis->data) == *(tempList1->data))
         {
             // While values are the same, delete useless node
             Node* toDelete = tempList1;
             tempList1 = tempList1->next;
             delete toDelete;
         }
-        while((tempThis->data) > (tempList1->data))
+        while(*(tempThis->data) > *(tempList1->data))
         {
             // while 'this' is greater, use 'prev' to add in the 'list1' node
             prevThis->next = tempList1;
@@ -222,7 +223,7 @@ bool LinkedList<ItemType>::Merge(LinkedList &list1)
             tempList1 = tempList1->next;
             prevThis->next = tempThis;
         }
-        while((tempThis->data) < (tempList1->data))
+        while(*(tempThis->data) < *(tempList1->data))
         {
             // While list1 is greater, keep moving
             prevThis = tempThis;

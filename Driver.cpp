@@ -110,9 +110,18 @@ int main()
     ll3.Peek(95, z);
     cout << "Looking for 95. Peek: " << z << endl;
     ll3.Peek(1, z);
-    cout << "Looking for  1. Peek: " << z << endl;
+    cout << "Looking for  1. Peek: " << z << endl << endl;
 
     // Merging lists
+    ll3.Merge(ll3);
+    cout << "ll3 contents: ";
+    temp = ll3.head;
+    while(temp != nullptr)
+    {
+        cout << *(temp->data) << " ";
+        temp = temp->next;
+    }
+    cout << endl;
     ll3.Merge(ll1);
     cout << "ll3 contents: ";
     temp = ll3.head;
