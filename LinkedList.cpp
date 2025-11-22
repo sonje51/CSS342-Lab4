@@ -4,14 +4,20 @@
 #include <fstream>
 #include "LinkedList.h"
 
-//defualt constructor
+/**
+ * @brief Default constructor. Initializes an empty linked list.
+ */
 template<class ItemType>
 LinkedList<ItemType>::LinkedList()
 {
     this->head = nullptr;
 }
 
-// copy constructor
+/**
+ * @brief Copy constructor. Creates a new linked list as a copy of an existing one.
+ * 
+ * @param source The linked list to copy from.
+ */
 template<class ItemType>
 LinkedList<ItemType>::LinkedList(LinkedList<ItemType> &source)
 {
@@ -19,6 +25,11 @@ LinkedList<ItemType>::LinkedList(LinkedList<ItemType> &source)
     *this = source;
 }
 
+/**
+ * @brief Deconstructor. Deletes individual nodes.
+ * 
+ * Frees memory allocated for the linked list by calling DeleteList().
+ */
 template<class ItemType>
 LinkedList<ItemType>::~LinkedList() 
 {
@@ -26,14 +37,14 @@ LinkedList<ItemType>::~LinkedList()
     // std::cout << "LinkedList deconstructor called" << std::endl;
 }
 
-// /**
-//  * @brief Builds the linked list from the contents of a file.
-//  * 
-//  * Reads objects of type ItemType from the specified file and inserts them into the list.
-//  * 
-//  * @param fileName The name of the file to read from.
-//  * @return true if the file was successfully opened and the list was built, false otherwise.
-//  */
+/**
+ * @brief Builds the linked list from the contents of a file.
+ * 
+ * Reads objects of type ItemType from the specified file and inserts them into the list.
+ * 
+ * @param fileName The name of the file to read from.
+ * @return true if the file was successfully opened and the list was built, false otherwise.
+ */
 template<class ItemType>
 bool LinkedList<ItemType>::BuildList(std::string fileName)
 {
