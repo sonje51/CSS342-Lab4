@@ -193,46 +193,66 @@ bool LinkedList<ItemType>::Merge(LinkedList &list1)
         return true;
     }
 
-    // If 'this' list has nothing, and assume 'list1' has something
-    // Shift the LinkedList over to this from 'list1'
+    // If 'this' is empty
     if(this->head == nullptr)
     {
         this->head = list1.head;
-        list1.head = nullptr; 
+        list1.head = nullptr;
+        return true;
     }
 
     // Iterate through both lists
     Node* tempThis = this->head;
-    Node* prevThis = nullptr;
-    Node* tempList1 = list1.head;
+    Node* prevThisNode = nullptr;
 
-    while(tempList1 != nullptr)
+    while(list1.head != nullptr)
     {
-        while(*(tempThis->data) == *(tempList1->data))
+        // If 'this' list has nothing left, shift the rest of 'list1' over
+        if(tempThis == nullptr)
         {
-            // While values are the same, delete useless node
-            Node* toDelete = tempList1;
-            tempList1 = tempList1->next;
+            tempThis = list1.head;
+            list1.head = nullptr;
+            return true;
+        }
+
+        //If nodes contain the same data, delete lis1's node
+        else if(*(tempThis->data) == *(list1.head->data))
+        {
+            Node* toDelete = list1.head;
+            list1.head = list1.head->next;
             delete toDelete;
         }
-        while(*(tempThis->data) > *(tempList1->data))
+
+        // If this.data is grater than list1.data
+        else if(*(tempThis->data) > *(list1.head->data))
         {
-            // while 'this' is greater, use 'prev' to add in the 'list1' node
-            prevThis->next = tempList1;
-            prevThis = prevThis->next;
-            tempList1 = tempList1->next;
-            prevThis->next = tempThis;
+            if(prevThisNode == nullptr)
+            {
+                prevThisNode = list1.head;
+                list1.head = list1.head->next;
+                prevThisNode->next = tempThis;
+                this->head = prevThisNode;
+            }
+            else
+            {
+                prevThisNode->next = list1.head;
+                prevThisNode = prevThisNode->next;
+                list1.head = list1.head->next;
+                prevThisNode->next = tempThis;
+            }
         }
-        while(*(tempThis->data) < *(tempList1->data))
+
+        // If list1.data is grater than this.data
+        else if(*(tempThis->data) < *(list1.head->data))
         {
             // While list1 is greater, keep moving
-            prevThis = tempThis;
+            prevThisNode = tempThis;
             tempThis = tempThis->next;
-            tempList1 = tempList1->next;
         }
     }
     return true;
 }
+
 /*
 LinkedList::LinkedList& operator+=(const LinkedList &ll)
 {

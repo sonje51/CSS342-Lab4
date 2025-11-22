@@ -140,9 +140,9 @@ int main()
         temp = temp->next;
     }
     cout << endl;
-    ll3.Merge(ll2);
+    ll1.Merge(ll2);
     cout << "ll3 contents: ";
-    temp = ll3.head;
+    temp = ll1.head;
     while(temp != nullptr)
     {
         cout << *(temp->data) << " ";
